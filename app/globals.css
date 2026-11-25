@@ -389,7 +389,6 @@ footer ul a:hover { color: var(--ink); text-decoration: underline; text-decorati
   body { font-size: 17px }
   .top .wrap { height: 72px; gap: 12px }
   .top .btn { padding: 12px 14px; font-size: 14.5px }
-  .top .btn .long { display: none }
   .logo small { display: none }
   .lead { font-size: 18px }
   .cta-row .btn { flex: 1 1 100% }

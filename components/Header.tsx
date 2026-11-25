@@ -32,7 +32,7 @@ export default function Header() {
         </nav>
         <a className="btn primary" href={waLink()} target="_blank" rel="noopener">
           <WhatsAppIcon />
-          <span><span className="long">Pedir </span>orçamento</span>
+          <span>Pedir orçamento</span>
         </a>
       </div>
     </header>
