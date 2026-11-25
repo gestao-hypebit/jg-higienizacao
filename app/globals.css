@@ -257,7 +257,7 @@ footer ul a:hover { color: var(--ink); text-decoration: underline; text-decorati
 .foot-bottom { padding-top: 0; font-size: 14px; color: var(--ink-mute) }
 
 /* botão flutuante */
-.talk { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 10px; text-decoration: none }
+.talk { position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); z-index: 60; display: flex; align-items: center; gap: 10px; text-decoration: none }
 .talk-label { background: var(--white); color: var(--ink); padding: 11px 16px; border-radius: 12px; font: 700 14.5px var(--display); box-shadow: var(--shadow), inset 0 0 0 1px var(--line); transition: transform .2s }
 .talk:hover .talk-label { transform: translateX(-4px) }
 .talk-avatar { position: relative; width: 60px; height: 60px; border-radius: 50%; border: 3px solid var(--blue); box-shadow: 0 10px 24px -8px rgba(10, 16, 29, .4) }
@@ -397,8 +397,95 @@ footer ul a:hover { color: var(--ink); text-decoration: underline; text-decorati
   .form-foot .btn { width: 100% }
 }
 @media (max-width: 560px) {
-  .ba-grid { grid-template-columns: 1fr }
-  .foot-grid { grid-template-columns: 1fr }
+  /* resultados: destaque em largura total, os outros em 2 colunas (o cartão do Instagram fecha a grade) */
+  .ba-grid { grid-template-columns: 1fr 1fr; gap: 12px }
+  .ba { padding: 6px 6px 0; border-radius: 18px }
+  .ba .frame { border-radius: 13px }
+  .ba .lbl { top: 8px; font-size: 10px; padding: 4px 7px }
+  .ba .lbl.l { left: 8px }
+  .ba .lbl.r { right: 8px }
+  .ba .handle::after { width: 36px; height: 36px; margin: -18px 0 0 -18px; background-size: 16px }
+  .ba figcaption { padding: 10px 6px 12px; font-size: 13px }
+  .ba figcaption b { font-size: 14.5px }
+  .ba.big figcaption b { font-size: 18px }
+  .insta { padding: 18px; gap: 10px; border-radius: 18px }
+  .insta-ico { width: 40px; height: 40px; border-radius: 11px }
+  .insta p { font-size: 13.5px }
+  .insta p b { font-size: 17px }
+  .insta .btn { font-size: 13px; padding: 10px 12px; gap: 6px }
+  .insta .btn svg { width: 16px; height: 16px }
+  .form-foot .btn { white-space: nowrap; font-size: 15.5px; padding-inline: 16px }
+  .foot-logo img { height: 80px }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px }
+  .foot-grid > div:last-child { grid-column: 1 / -1 }
+}
+/* ===== celular: boas práticas ===== */
+@media (max-width: 980px) {
+  /* cabeçalho sempre sólido: o conteúdo passa por baixo sem perder leitura */
+  .top { background: rgba(242, 245, 249, .94); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-color: var(--line) }
+  /* hero: foto menor e enquadrada no rosto, dentro das margens; título e botão aparecem na primeira tela */
+  .hero-visual { position: relative; width: auto; margin: 84px var(--gut) 0; aspect-ratio: 4 / 3; max-height: 40svh; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-card) }
+  .hero-visual img { object-position: 50% 24% }
+  .hero-text { padding-top: 28px }
+  .about-photo, .process-photo { aspect-ratio: 4 / 3; max-height: none }
+  .about-photo img { object-position: 50% 22% }
+}
+@media (max-width: 720px) {
+  html { scroll-padding-top: 80px }
+  .hero-visual { margin-top: 80px; max-height: 36svh }
+  .hero h1 { font-size: clamp(32px, 8.6vw, 44px); line-height: 1.08 }
+  .lead { font-size: 17px; margin: 18px 0 24px }
+  .cta-row { gap: 10px }
+  .btn.big { padding: 17px 22px; font-size: 16px }
+  .hero-proof { display: flex; margin-top: 24px; padding: 10px 14px 10px 10px }
+  .hero-proof .thumbs img { width: 44px; height: 44px }
+  .hero-proof small { font-size: 13px }
+  /* ritmo vertical mais curto entre seções */
+  .sec { padding: 64px 0 }
+  h2 { font-size: clamp(30px, 8vw, 40px) }
+  .sec-head { margin-bottom: 32px; gap: 14px }
+  .sec-head p, .why-text p, .process-side > p, .about-text p, .quote .side p, .faq-sub { font-size: 17px }
+  .card { padding: 24px; border-radius: 20px }
+  .svc h3, .bento .feat h3 { font-size: 24px }
+  .bento .feat h3 { font-size: 32px }
+  .bento .feat .svc-body { padding-top: 24px }
+  .bento .feat .feat-bg { width: 200px; right: -30px; top: -20px }
+  /* serviços compactos: ícone à esquerda, texto à direita */
+  .bento .svc:not(.feat) { display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: 16px; align-items: start; padding: 20px }
+  .bento .svc:not(.feat) .svc-ico { width: 48px; height: 48px; border-radius: 12px; grid-row: span 2 }
+  .bento .svc:not(.feat) .svc-ico svg { width: 28px; height: 28px }
+  .bento .svc:not(.feat) h3 { margin: 2px 0 4px; font-size: 20px }
+  .bento .svc:not(.feat) p { margin: 0 0 10px; font-size: 15.5px }
+  .bento .svc:not(.feat) .link { grid-column: 2; justify-self: start; font-size: 15px }
+  .bento .wide { display: grid !important }
+  .why-photos { gap: 12px; padding-bottom: 32px }
+  .why-photos figure { border-width: 4px; border-radius: 20px }
+  .why-photos figure:last-child { transform: translateY(32px) }
+  .benefits { gap: 20px }
+  .ico-box { width: 46px; height: 46px; border-radius: 12px }
+  .timeline-cta { margin-top: 40px }
+  .plist li { padding: 24px 0 }
+  .plist h3 { font-size: 21px }
+  .plist p { font-size: 16px }
+  .ba.big .frame { min-height: 0; aspect-ratio: 4 / 5; flex: none }
+  .insta { padding: 26px }
+  .about-photo { border-width: 5px; border-radius: 22px }
+  .care-panel { border-radius: 22px }
+  .care-top h3 { font-size: 26px }
+  .care-panel li { padding: 18px 0 }
+  .care-panel .btn { width: 100%; justify-content: center }
+  .contact-lines { margin-top: 28px }
+  summary { padding: 20px 0; font-size: 17px }
+  .foot-bottom { padding-bottom: 96px }
+  /* botão do WhatsApp flutuante menor, sem cobrir conteúdo */
+  .talk-avatar { width: 54px; height: 54px }
+}
+/* toque: sem efeitos de hover que "grudam" no celular */
+@media (hover: none) {
+  .svc:hover, .sec.white .svc:hover, .hero-proof:hover { transform: none; box-shadow: none }
+  .sec.white .svc:hover { background: var(--paper) }
+  .svc:hover .svc-ico { background: var(--blue-soft); color: var(--blue) }
+  .sec.white .svc:hover .svc-ico { background: var(--white) }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important }
