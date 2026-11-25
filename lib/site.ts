@@ -1,3 +1,17 @@
+/**
+ * Endereço público do site, usado em canonical, sitemap, robots e Open Graph.
+ * Em produção, defina NEXT_PUBLIC_SITE_URL (ex.: https://www.seudominio.com.br).
+ * Na Vercel, sem a variável, usa o domínio de produção do projeto automaticamente.
+ */
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
+).replace(/\/$/, "");
+
+export const BUSINESS_NAME = "J.G Limpeza e Higienização";
+export const CITY = "Franca";
+export const STATE = "SP";
+
 export const WHATSAPP = "5516999862916";
 export const WHATSAPP_LABEL = "(16) 99986-2916";
 export const INSTAGRAM = "https://www.instagram.com/jg_limpezaehigienizacao/";

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import BeforeAfter from "@/components/BeforeAfter";
 import QuoteForm from "@/components/QuoteForm";
 import { RevealObserver } from "@/components/Effects";
+import StructuredData from "@/components/StructuredData";
 import { CareIcon, Icon, InstagramIcon, PinIcon, WhatsAppIcon } from "@/components/icons";
 import {
   INSTAGRAM, INSTAGRAM_HANDLE, WHATSAPP_LABEL,
@@ -35,8 +36,8 @@ export default function Home() {
                 Seu sofá <em>limpo de verdade</em>, sem sair de casa.
               </h1>
               <p className="lead">
-                Limpeza e higienização de sofás, poltronas, cadeiras, tapetes e bancos de carro em Franca/SP
-                e região. Vamos até a sua casa e tiramos de dentro do tecido a sujeira que o olho não vê.
+                Limpeza e higienização de estofados em Franca/SP e região: sofás, poltronas, cadeiras, tapetes
+                e bancos de carro. Vamos até a sua casa e tiramos de dentro do tecido a sujeira que o olho não vê.
               </p>
               <div className="cta-row">
                 <a className="btn primary big" href={ORCAMENTO} target="_blank" rel="noopener">
@@ -64,7 +65,7 @@ export default function Home() {
           <div className="wrap">
             <div className="sec-head reveal">
               <h2>O que a gente limpa</h2>
-              <p>Cada tecido pede um cuidado diferente. Antes de começar, avaliamos o material, as manchas e o tipo de uso para escolher o produto e a técnica certos.</p>
+              <p>Limpeza de sofá, poltrona, cadeira, tapete, banco de carro e couro em Franca e região. Cada tecido pede um cuidado diferente: antes de começar, avaliamos o material, as manchas e o tipo de uso.</p>
             </div>
             <ul className="bento">
               {services.map((s, i) => {
@@ -327,6 +328,7 @@ export default function Home() {
         </span>
       </a>
       <RevealObserver />
+      <StructuredData />
     </>
   );
 }
