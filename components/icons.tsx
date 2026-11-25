@@ -29,7 +29,7 @@ export function PinIcon(p: SVGProps<SVGSVGElement>) {
 
 export type IconName =
   | "home" | "drop" | "shield" | "chat" | "check" | "camera" | "calendar" | "van" | "wind"
-  | "clock" | "sun" | "bug" | "layers" | "eye" | "repeat" | "paw" | "hand";
+  | "clock" | "sun" | "bug" | "layers" | "eye" | "repeat" | "paw" | "hand" | "x";
 
 const paths: Record<IconName, React.ReactNode> = {
   home: <><path d="M3 11l9-7 9 7" /><path d="M5 10v10h14V10" /><path d="M10 20v-6h4v6" /></>,
@@ -37,6 +37,7 @@ const paths: Record<IconName, React.ReactNode> = {
   shield: <><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z" /><path d="M8.5 12l2.5 2.5 4.5-5" /></>,
   chat: <><path d="M4 5h16v11H9l-5 4z" /><path d="M8 10h8M8 13h5" /></>,
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
+  x: <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />,
   camera: <><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></>,
   calendar: <><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M8 3v4M16 3v4" /></>,
   van: <><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" /><circle cx="7" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></>,

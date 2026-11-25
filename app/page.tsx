@@ -6,9 +6,9 @@ import { RevealObserver } from "@/components/Effects";
 import { CareIcon, Icon, InstagramIcon, PinIcon, WhatsAppIcon } from "@/components/icons";
 import {
   INSTAGRAM, INSTAGRAM_HANDLE, WHATSAPP_LABEL,
-  benefits, faq, howItWorks, results, services, steps, tips, waLink,
+  benefits, careDo, careDont, faq, howItWorks, results, services, steps, waLink,
 } from "@/lib/site";
-import jeffersonHero from "@/public/jefferson-hero.jpg";
+import jeffersonHero from "@/public/jefferson-hero-hd.jpg";
 import avatar from "@/public/jefferson-avatar.jpg";
 import logoFull from "@/public/logo-jg.png";
 import poltronaAntes from "@/public/fotos/poltrona-antes.jpg";
@@ -27,7 +27,7 @@ export default function Home() {
         {/* HERO */}
         <section className="hero">
           <div className="hero-visual">
-            <Image src={jeffersonHero} alt="Jefferson, responsável pela J.G Limpeza e Higienização" priority placeholder="blur" sizes="(max-width: 980px) 100vw, 48vw" />
+            <Image src={jeffersonHero} quality={90} alt="Jefferson, responsável pela J.G Limpeza e Higienização" priority placeholder="blur" sizes="(max-width: 980px) 100vw, 48vw" />
           </div>
           <div className="wrap hero-grid">
             <div className="hero-text">
@@ -191,7 +191,7 @@ export default function Home() {
         <section className="sec white" id="sobre">
           <div className="wrap about">
             <div className="about-photo reveal">
-              <Image src={jeffersonHero} alt="Jefferson, da J.G Limpeza e Higienização" placeholder="blur" sizes="(max-width: 980px) 100vw, 42vw" />
+              <Image src={jeffersonHero} quality={90} alt="Jefferson, da J.G Limpeza e Higienização" placeholder="blur" sizes="(max-width: 980px) 100vw, 42vw" />
             </div>
             <div className="about-text reveal">
               <h2>Quem cuida do seu estofado</h2>
@@ -208,23 +208,43 @@ export default function Home() {
         </section>
 
         {/* CUIDADOS */}
-        <section className="sec">
+        <section className="sec blue care-sec">
           <div className="wrap">
             <div className="sec-head reveal">
               <h2>Cuidados depois da limpeza</h2>
-              <p>Algumas atitudes simples mantêm o estofado limpo por mais tempo e ajudam na secagem.</p>
+              <p>Algumas atitudes simples ajudam na secagem e mantêm o estofado limpo por muito mais tempo.</p>
             </div>
-            <ul className="cards3">
-              {tips.map((t) => (
-                <li key={t.title} className="card tip reveal">
-                  <span className="ico-box"><Icon name={t.icon} /></span>
-                  <div>
-                    <h3>{t.title}</h3>
-                    <p>{t.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="care-grid">
+              <div className="care-panel do reveal">
+                <div className="care-top">
+                  <span className="care-sign"><Icon name="check" /></span>
+                  <h3>Faça</h3>
+                </div>
+                <ul>
+                  {careDo.map((c) => (
+                    <li key={c.title}>
+                      <Icon name={c.icon} className="care-ico" />
+                      <div><b>{c.title}</b><p>{c.text}</p></div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="care-panel dont reveal">
+                <div className="care-top">
+                  <span className="care-sign"><Icon name="x" /></span>
+                  <h3>Evite</h3>
+                </div>
+                <ul>
+                  {careDont.map((c) => (
+                    <li key={c.title}>
+                      <Icon name={c.icon} className="care-ico" />
+                      <div><b>{c.title}</b><p>{c.text}</p></div>
+                    </li>
+                  ))}
+                </ul>
+                <a className="btn light" href={waLink("Olá, J.G! Tenho uma dúvida sobre os cuidados com o estofado.")} target="_blank" rel="noopener"><WhatsAppIcon /> Tirar uma dúvida</a>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -66,11 +66,15 @@ export const howItWorks = [
   { icon: "van", title: "Limpeza no local", text: "Vamos até você com o equipamento. Você não precisa levar nada." },
 ] as const;
 
-export const tips = [
-  { icon: "wind", title: "Ventile o ambiente", text: "Abra as janelas e, se puder, ligue um ventilador. Use o estofado só depois de totalmente seco." },
-  { icon: "sun", title: "Evite sol direto", text: "Sol forte desbota o tecido. Deixe secar à sombra, com o ar circulando." },
+export const careDo = [
+  { icon: "wind", title: "Ventile o ambiente", text: "Janelas abertas e, se puder, um ventilador ligado. O ar circulando acelera a secagem." },
   { icon: "repeat", title: "Aspire toda semana", text: "Tira a poeira e os pelos antes que entrem fundo no tecido." },
-  { icon: "hand", title: "Mancha nova? Não esfregue", text: "Pressione um pano seco ou papel-toalha para absorver. Esfregar espalha a mancha." },
-  { icon: "paw", title: "Proteja do pet", text: "Uma manta no lugar preferido do animal reduz pelos e odores no estofado." },
-  { icon: "clock", title: "Repita a higienização", text: "Uma vez por ano na maioria das casas; a cada seis meses com crianças, pets ou alérgicos." },
+  { icon: "paw", title: "Use uma manta para o pet", text: "Protege o lugar preferido do animal de pelos e odores." },
+  { icon: "clock", title: "Higienize com frequência", text: "Uma vez por ano; a cada seis meses com crianças, pets ou alérgicos." },
+] as const;
+
+export const careDont = [
+  { icon: "drop", title: "Usar antes de secar", text: "Sentar no estofado úmido pode marcar o tecido e atrasa a secagem." },
+  { icon: "sun", title: "Deixar no sol forte", text: "O sol direto desbota o tecido. Seque à sombra, com o ar circulando." },
+  { icon: "hand", title: "Esfregar mancha nova", text: "Esfregar espalha a mancha. Pressione um pano seco ou papel-toalha para absorver." },
 ] as const;
