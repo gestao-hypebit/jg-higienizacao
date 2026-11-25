@@ -149,10 +149,9 @@ export default function Home() {
             <div className="process-side reveal">
               <h2>O que fazemos no seu estofado</h2>
               <p>Um processo completo em seis etapas, pensado para limpar a fundo sem agredir o tecido.</p>
-              <figure className="process-photo">
-                <Image src={cadeiraDepois} alt="Cadeira estampada depois da limpeza da J.G" sizes="(max-width: 980px) 100vw, 38vw" placeholder="blur" />
-                <figcaption className="chip blue">Resultado final</figcaption>
-              </figure>
+              <div className="process-ba">
+                <BeforeAfter {...results[2]} />
+              </div>
             </div>
             <ol className="plist">
               {steps.map((s, i) => (
