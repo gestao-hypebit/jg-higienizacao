@@ -1,0 +1,9 @@
+Fotos de antes e depois usadas na seção "Resultados" (recortadas das montagens do Instagram).
+
+  poltrona-antes.jpg  poltrona-depois.jpg
+  carro-antes.jpg     carro-depois.jpg
+  cadeira-antes.jpg   cadeira-depois.jpg
+  carro2-antes.jpg    carro2-depois.jpg
+
+Para trocar ou adicionar, coloque o par antes/depois aqui e edite a lista `results` em lib/site.ts.
+Se uma foto não existir, o card mostra um tecido ilustrado no lugar.
